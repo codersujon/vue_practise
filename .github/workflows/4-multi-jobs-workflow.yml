@@ -1,0 +1,27 @@
+name: Multi Jobs Workflow
+
+on: 
+    push:
+        branches:
+            - main
+
+jobs:
+    first-workflow-job:
+        runs-on: ubumntu-latest
+
+        steps: 
+            - name: First Step
+              run: | 
+                echo "Hello, First Workflow!"
+
+    second-workflow-job:
+         runs-on: ubumntu-latest
+
+         steps:
+            - name: First Step
+              run: | 
+                echo "Hello, Second Workflow!"
+
+
+
+    
