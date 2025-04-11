@@ -1,0 +1,13 @@
+name: Conditional Workflow
+
+on: 
+    push:
+        paths:
+            - "backend/**"
+
+jobs:
+    manual-workflow-job:
+        runs-on: ubumntu-latest
+        steps: 
+            - name: Build Backend Image
+            runs: echo "Backend Image is Building"

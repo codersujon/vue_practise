@@ -4,7 +4,7 @@ on:
     workflow_dispatch:
 
 jobs:
-    first-workflow-job:
+    multi-workflow-job:
         runs-on: ubumntu-latest
 
         steps: 
