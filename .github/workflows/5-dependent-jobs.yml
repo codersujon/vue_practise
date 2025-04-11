@@ -1,4 +1,4 @@
-name: Multi Jobs Workflow
+name: Dependent Multi Jobs Workflow
 
 on: 
     workflow_dispatch:
@@ -14,11 +14,21 @@ jobs:
 
     second-workflow-job:
          runs-on: ubumntu-latest
+         needs: [first-workflow-job]
 
          steps:
             - name: Second Workflow Job
               run: | 
                 echo "Hello, Second Workflow!"
+    
+    third-workflow-job:
+         runs-on: ubumntu-latest
+         needs: [first-workflow-job, second-workflow-job]
+
+         steps:
+            - name: Third Workflow Job
+              run: | 
+                echo "Hello, Third Workflow!"
 
 
 
